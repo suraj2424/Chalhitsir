@@ -1,38 +1,427 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto+Slab:wght@100..900&display=swap');
+
+body {
+  font-family: sans-serif;
+  padding-top: 80px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-main{
+  background-color: #192b31;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 80px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.company-logo a {
+  text-decoration: none;
+  color: #44a244;
+}
+
+.company-logo span{
+  font-size: 35px;
+  color: #44a244;
+  font-weight: 600;
+}
+
+.company-logo {
+  font-family: "Kaushan Script", cursive;
+  font-size: 22px;
+}
+
+.logo-effect:hover,
+.logo-effect:hover span {
+  color: #63e263;
+  transition: color 1s ease-out;
+
+}
+
+#sign-up{
+  background-color: rgba(211, 91, 11, 0.642);
+  border-radius: 10px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+#sign-up:hover{
+  background-color: #612581;
+  outline: 1px solid #c289e1;
+  transition: background-color 1s ease-out;
+}
+
+.company-options{
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.list-1 a{
+  text-decoration: none;
+  color: #958d97;
+  margin-right: 20px;
+}
+
+.list-1 li{
+  gap: 20px;
+}
+
+#sign-up{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.link-services,.link-about,.link-team,.link-login{
+  position: relative;
+  text-decoration: none;
+  color: #958d97;
+  text-transform: uppercase;
+}
+
+.link-services:hover,
+.link-about:hover,
+.link-team:hover,
+.link-login:hover{
+  color: #ffffff;
+  transition: color 0.6s ease-in;
+}
+
+.link-services::after,
+.link-about::after,
+.link-team::after,
+.link-login::after
+{
+  content: "";
+  background-color: cyan;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: -4px;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.link-services:hover::after,
+.link-about:hover::after,
+.link-team:hover::after,
+.link-login:hover::after
+{
+  opacity: 1;
+}
+
+
+.services-container{
+  font-family: "Roboto Slab", serif;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #101b1f;
+}
+
+.service-cards{
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 992px) {
+  .service-cards,.services-inner,.testimonials,.testimonial,.about-us-container{
+    display: block;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.service-card{
+  padding: 5px 5px;
+  width: 50%;
+}
+
+.service-card h2{
+  color: #eb9a9a;
+}
+
+.services-inner {
+  opacity: 0;
+  margin: 20px;
+  padding: 10px;
+  transition: opacity 1s ease-in-out;
+}
+
+.services-inner:not(.hidden) {
+  opacity: 1;
+}
+
+/* .testimonials{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.testimonials ul{
+  list-style-type: none;
+  width: 50%;
+  color: #7f9ba4;
+  padding: 20px;
+  height: 130px;
+  background-color: #284650;
+  border-radius: 10px;
+}
+
+.left{
+  float: left;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.testimonials ul img{
+  height: 100px;
+  width: 100px;
+  border: 3px solid #ffffff;
+  border-radius: 50px;
+} */
+
+
+.testimonials {
+  display: flex;
+  align-items: center; /* Updated from 'space' to 'space-between' */
+}
+
+.testinomial {
+  background-color: #264049;
+  align-items: center;
+  border-radius: 10px;
+  max-width: 300px;
+  margin: 20px;
+  padding: 20px;
+  list-style: none;
+  display: flex; /* Added to make the child elements display in a row */
+}
+
+.testinomial ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0;
+  margin: 0; /* Added to remove the default margin */
+}
+
+.testinomial #person-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #ffffff; /* Moved from the separate #person-name rule */
+}
+
+.testinomial #person-position {
+  font-size: 16px;
+  color: antiquewhite; /* Moved from the separate #person-position rule */
+  font-size: 12px; /* Updated from 16px to 12px */
+  padding-bottom: 10px; /* Moved from the separate #person-position rule */
+}
+
+.testinomial li:last-child {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.left {
+  min-width: 80px;
+  height: 80px;
+  float: left;
+  margin-right: 15px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  margin-bottom: 20px;
+
+}
+
+.testimonial-card {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.contact-section{
+  margin-top: 20px;
+}
+
+/* About US Page*/
+.about-us-container {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #101b1f;
+  align-items: center;
+}
+
+.about-us-inner {
+  opacity: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 100vh;
+  color: #ffffff;
+  transition: opacity 1s ease-in-out;
+  font-family: "Roboto Slab", serif;
+  background-color: #101b1f;
+}
+
+.about-us-inner:not(.hidden) {
+  opacity: 1;
+}
+
+.signup-container {
+  font-family: "Roboto Slab", serif;
+  background-color: #101b1f;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.signup-box{
+  height: 100vh;
+  margin-top: 100px;
+  width: 400px;
+  padding: 20px;
+}
+
+.signup-inner {
+  opacity: 0;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.signup-inner:not(.hidden) {
+  opacity: 1;
+}
+
+.signup-inner h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d2c2c2;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.submit-button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.team-container {
+  font-family: "Roboto Slab", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #101b1f;
+
+}
+
+.team-box {
+  height: 100vh;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.team-inner {
+  opacity: 0;
+  background-color: #101b1f;
+  padding: 20px;
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.team-inner:not(.hidden) {
+  opacity: 1;
+}
+
+.team-inner h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.team-member {
+  background-color: #264049;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  margin: 20px;
+  
+  padding: 20px;
+  list-style: none;
+}
+
+.team-member ul {
+  list-style: none;
+  padding: 0;
+}
+
+.team-member #person-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.team-member #person-position {
+  font-size: 16px;
+  color: #b3adad;
+  margin-bottom: 10px;
+}
+
+.team-member li:last-child {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.team-member .left {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
