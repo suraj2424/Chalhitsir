@@ -2,8 +2,10 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const contactusSchema = new Schema({
-    title:'string',
-    description:'string',
+    name:'string',
+    email:'string',
+    phone:'number',
+    message:'string'
 })
 
 exports.ContactUs = mongoose.model('ContactUs',contactusSchema);
