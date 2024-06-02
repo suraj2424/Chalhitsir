@@ -94,8 +94,8 @@ export default function Footer() {
                 </Link>
               </p>
               <p>
-                <Link to='/feedback' className='section-link'>
-                Feedback
+                <Link to='/contactus' className='section-link'>
+                Contact Us
                 </Link>
               </p>
             </div>

@@ -754,3 +754,84 @@ body {
 .footer-copyright{
   padding-top: 30px;
 }
+
+.main-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background: #192b31;
+  }
+
+  .contact-heading{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  .contactus-form{
+    width: 60%;
+  }
+
+
+  .contactus-input{
+    width: 30%;
+      padding: 8px;
+      margin: 10px;
+      border: 1px solid #1c87c9 ;
+      border-radius: 10px;
+      outline: none;
+
+  }
+
+  .contactus-textarea{
+    box-sizing: border-box;
+    width: calc(100% - 18px);
+      padding: 8px;
+      margin: 10px;
+      border: 1px solid #1c87c9;
+      outline: none;
+    
+  }
+
+  .contactus-textarea::placeholder {
+  color: #666;
+  }
+
+  .info{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  
+    
+
+    .contact-button{
+      text-align: center;
+    }
+
+    .contact-submit{
+      margin: auto;
+      width: 20%;
+      padding: 10px;
+      border-radius: 20px;
+      background: #1c87c9; 
+      font-size: 16px;
+      font-weight: 400;
+      color: #fff;
+      }
+      .contact-submit:hover {
+      background: #2371a0;
+      cursor: pointer;
+      }  
+
+      .contact-icon{
+        margin: 11px;
+        margin-right: 0px;
+        padding: 6px;
+         height: 20px;
+        width: 50px; 
+        background-color: white;
+        border-radius: 10px 0 0 10px
+      }
