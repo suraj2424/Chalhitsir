@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 
 body {
   font-family: sans-serif;
-  padding-top: 80px;
+}
+
+.hidden{
+  display: none;
 }
 
 .nav-main{
@@ -14,10 +19,16 @@ body {
   padding-right: 30px;
   height: 80px;
   align-items: center;
-  position: fixed;
+  z-index: 99;
   top: 0;
+  opacity: 0;
   width: 100%;
   box-sizing: border-box;
+}
+
+.nav-main:not(.hidden){
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
 }
 
 .company-logo a {
@@ -125,6 +136,7 @@ body {
 .landing-page {
   opacity: 0;
   margin: 0 0;
+  position: relative;
   padding: 20px;
   transition: opacity 1s ease-in-out;
   background-color: #101b1f;
@@ -335,7 +347,7 @@ body {
 
 .services-inner {
   opacity: 0;
-  margin: 20px;
+  margin: 0 20px;
   padding: 10px;
   transition: opacity 1s ease-in-out;
   margin-bottom: 0;
@@ -436,70 +448,265 @@ body {
   opacity: 1;
 }
 
+
+/* SIGNUP PAGE */
 .signup-container {
-  font-family: "Roboto Slab", serif;
-  background-color: #101b1f;
+  font-family: sans-serif;
+  opacity: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: url(/public/images/registration.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px 0px;
+}
+
+.signup-container:not(.hidden) {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.signup-inner-1{
+  background: #000;
+  position: absolute;
+  opacity: 0.9;
+  width: 100vw;
+  min-height: 120vh;
+}
+
+.signup-inner-2{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-}
-
-.signup-box{
-  height: 100vh;
-  margin-top: 100px;
-  width: 400px;
-  padding: 20px;
-}
-
-.signup-inner {
-  opacity: 0;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
+  align-items: center;
   width: 100%;
-  max-width: 400px;
+  position: relative;
+  padding: 0px 450px;
+  flex-direction: column;
+  color: #ffffff;
 }
 
-.signup-inner:not(.hidden) {
-  opacity: 1;
-}
-
-.signup-inner h1 {
+.signup-inner-2 h1{
+  width: 100%;
   text-align: center;
-  margin-bottom: 20px;
+  color: #63e263;
+  font-family: "Chakra Petch", sans-serif;
+  letter-spacing: 3px;
+  filter: drop-shadow(2px 2px 5px #0f8100);
+  text-transform: uppercase;
+  padding-top: 0px;
+  margin-top: 0;
+  font-size: 40px;
 }
 
-.form-group {
-  margin-bottom: 20px;
+.signup-inner-2 p{
+  filter: drop-shadow(2px 2px 5px #6df65b);
+  font-size: 20px;
+  color: #63e263;
+  letter-spacing: 0.8px;
 }
 
-.form-group label {
-  display: block;
+.signup-inner-2 p:last-of-type{
+  color: #cecece;
+  filter: none;
+  font-size: 16px;
+  padding-top: 5px;
+  display: inline-flex;
+  padding-right: 10px;
+}
+
+.signup-inner-2 form{
+  width: 80%;
+}
+
+.signup-inner-2 form input{
+  width: 100%;
+  color: #ffffff;
+  font-family: sans-serif;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-bottom: .2em solid #4CAF50;
+	background: rgb(101, 127, 114);
+  border-radius: 5px 5px 0 0;
+  padding-left: 10px;
+  line-height: 2;
+  font-size: 15px;
+  letter-spacing: 0.6px;
   margin-bottom: 10px;
 }
 
-.form-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #d2c2c2;
-  border-radius: 5px;
-  box-sizing: border-box;
+.signup-inner-2 form input::placeholder{
+  color: #cecece;
+  
 }
 
-.submit-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
+.signup-inner-2 form input:focus{
+  color: #ffffff;
+  letter-spacing: 0.6px;
+  font-weight: 400;
+}
+
+.signup-inner-2 form button{
+  margin-top: 30px;
+  width: 50%;
+  height: 40px;
   border: none;
-  border-radius: 5px;
+  border-radius: 2px;
+  background-color: #45a049;
+  color: #ffffff;
+  font-size: 20px;
   cursor: pointer;
+  margin-left: 100px;
+  box-shadow: 5px 5px 5px rgba(68, 124, 91, 0.5);
+  text-transform: uppercase;
+  font-family: "Chakra Petch", sans-serif;
 }
 
-.submit-button:hover {
-  background-color: #0056b3;
+
+.signup-inner-2 form button:hover{
+  background-color: #285c2a;
+  box-shadow: 5px 5px 5px rgba(68, 124, 91, 0.5);
+  transition: background-color 0.3s ease-out;
 }
+
+.signup-inner-2 form a:first-of-type{
+  text-decoration: none;
+  color: #4CAF50;
+}
+
+.signup-post-error-check{
+  color: #d11d1d;
+}
+
+
+
+
+
+/* LOGIN PAGE */
+
+.login-container {
+  font-family: sans-serif;
+  opacity: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: url(/public/images/login.png);
+}
+
+.login-container:not(.hidden) {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.login-inner-1{
+  background: #000;
+  position: absolute;
+  opacity: 0.9;
+  width: 100vw;
+  height: 100vh;
+}
+
+.login-inner-2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  position: relative;
+  padding: 0px 450px;
+  flex-direction: column;
+  color: #ffffff;
+}
+
+.login-inner-2 h1{
+  width: 100%;
+  text-align: center;
+  color: #63e263;
+  font-family: "Chakra Petch", sans-serif;
+  letter-spacing: 3px;
+  filter: drop-shadow(2px 2px 5px #0f8100);
+  text-transform: uppercase;
+  padding-top: 0px;
+  margin-top: 0;
+  font-size: 40px;
+}
+
+.login-inner-2 p{
+  filter: drop-shadow(2px 2px 5px #6df65b);
+  font-size: 20px;
+  color: #63e263;
+  letter-spacing: 0.8px;
+}
+
+.login-inner-2 form input{
+  width: 100%;
+  color: #ffffff;
+  font-family: sans-serif;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-bottom: .2em solid #4CAF50;
+	background: rgb(101, 127, 114);
+  border-radius: 5px 5px 0 0;
+  padding-left: 10px;
+  font-size: 20px;
+  letter-spacing: 0.6px;
+  margin-bottom: 10px;
+}
+
+.login-inner-2 form input::placeholder{
+  color: #cecece;
+  
+}
+
+.login-inner-2 form input:focus{
+  color: #ffffff;
+  letter-spacing: 0.6px;
+  font-weight: 400;
+}
+
+.login-inner-2 form input::selection {
+  color: rgb(107, 107, 107);
+  background: rgb(255, 255, 129);
+  
+}
+
+.login-inner-2 form button{
+  margin-top: 30px;
+  width: 50%;
+  height: 40px;
+  border: none;
+  border-radius: 2px;
+  background-color: #45a049;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 100px;
+  box-shadow: 5px 5px 5px rgba(68, 124, 91, 0.5);
+  text-transform: uppercase;
+  font-family: "Chakra Petch", sans-serif;
+}
+
+.login-inner-2 form button:hover{
+  background-color: #285c2a;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 1s ease-out;
+}
+
+
+.login-error-check{
+  color: #d11d1d;
+  color: red; /* Example error color */
+  height: 20px; /* Reserve space even when there's no error */ /* Adjust spacing as needed */
+}
+
 
 .team-container {
   font-family: "Roboto Slab", serif;
@@ -679,6 +886,7 @@ body {
 
 .footer{
   background-color: #101b1f;
+  position: relative;
   justify-content: space-between;
   padding: 30px;
   /* height: 100px; */

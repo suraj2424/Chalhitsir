@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import LoadingBar from "./Loadingbar";
 
 const Team = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,7 +28,6 @@ const Team = () => {
 
   return (
     <div className="team-container">
-      <LoadingBar />
       <div className="team-box">
         <div className={`team-inner ${isLoading ? "hidden" : ""}`}>
           <h1>Meet Our Team</h1>

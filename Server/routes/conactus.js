@@ -5,4 +5,4 @@ const router = express.Router();
 
 router.post('/',contactUsController.insertContactUsData);
 
-exports.router = router;
+module.exports = router;

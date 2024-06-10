@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import LoadingBar from "./Loadingbar";
 
 const Home = () => {
     const [isLoading,setIsLoading] = useState(true);
     useEffect(()=>{
+      document.title = "Homepage - Chalhitsir";
         const timer = setTimeout(()=>{
             setIsLoading(false);
         },1000);
@@ -11,7 +11,6 @@ const Home = () => {
     });
   return (
     <div>
-        <LoadingBar/>
         <div className={`landing-page ${ isLoading ? "hidden" : "" }`}>
       <header className="header">
         <h1>Mountain Crisis Travel Aid</h1>
