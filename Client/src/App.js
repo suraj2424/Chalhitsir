@@ -10,6 +10,9 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import ContactUs from './components/ContactUs';
 import NoPage from './components/NoPage';
+import MapSample from './components/MapSample';
+
+import MapComponent from './components/MapComponent';
 
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -39,6 +42,8 @@ function App() {
                 <Route path = "/signup" element = {<Signup/>} />
                 <Route path = "/" element = {<Home/>} />
                 <Route path = "/contactus" element = {<ContactUs/>} />
+                <Route path = "/mapsample" element = {<MapSample/>} />
+                <Route path = "/mapcomponent" element = {<MapComponent/>} />
                 <Route path = "*" element = {<NoPage/>} />
             </Routes>
         </div>
