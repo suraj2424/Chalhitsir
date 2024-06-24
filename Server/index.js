@@ -8,7 +8,11 @@ const contactusRouter = require('./routes/conactus');
 const server = express();
 server.use(cors());
 server.use(express.json());
-server.use('/contactus',contactusRouter.router)
+server.use('/contactus',contactusRouter.router);
+
+server.get('/',(req,res)=>{
+  res.status(201).json({message:'Connected to ChalHitSir Backend!'});
+});
 
 
 main().catch(err => console.log(err));

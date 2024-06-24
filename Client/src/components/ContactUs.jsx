@@ -18,7 +18,7 @@ export default function ContactUs() {
 
   const addData = async(contactus)=>{
     try{
-      await axios.post('http://localhost:3001/contactus',contactus).then((res)=>{
+      await axios.post('https://chalhitsir-website.onrender.com/contactus',contactus).then((res)=>{
         if(res.status===200){
           var modal = document.getElementById("modal-sucess");
           modal.style.display = "block";

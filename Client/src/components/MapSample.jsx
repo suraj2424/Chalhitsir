@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { mappls, mappls_plugin } from  'mappls-web-maps';
 // require('dotenv').config;
 
-let apikey ="7783f393-2f77-4ddc-8d7b-0c20327a8005";
+let apikey ="6eb75952-7043-40d6-9e5f-36fb2a8eac33";
 const mapplsClassObject = new mappls();
 const mapplsPluginObject = new mappls_plugin();
 
