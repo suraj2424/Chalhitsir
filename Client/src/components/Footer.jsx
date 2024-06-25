@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
+  const [isLoading,setIsLoading] = useState(true);
+  useEffect(()=>{
+    const timer = setTimeout(()=>{
+      setIsLoading(false)
+    },1000)
+    return ()=> clearTimeout(timer)
+  },[])
   return (
-    <div className="footer">
+    <div className={`footer ${isLoading ? "hidden" : ""}`}>
       <section className="footer-section1">
         <div className="section1-left">
           <span>Get connected with us on social networks:</span>

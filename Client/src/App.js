@@ -9,24 +9,13 @@ import Signup from "./components/Signup";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Feedback from './components/Feedback';
+import Maps from './components/Maps';
 
-import { useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
 
-function ScrollToTop() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-}
 
 function App() {
   return (
     <Router>
-      <ScrollToTop />
       <div className="App">
       <Navbar/>
       <div className="component-linking">
@@ -38,6 +27,7 @@ function App() {
                 <Route path = "/signup" element = {<Signup/>} />
                 <Route path = "/" element = {<Home/>} />
                 <Route path = "/feedback" element = {<Feedback/>} />
+                <Route path = "/maps" element = {<Maps/>} />
             </Routes>
         </div>
         <Footer/>

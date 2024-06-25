@@ -11,103 +11,48 @@ const Services = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const people = [
-    {
-      icon: "/images/john_doe.jpg",
-      content:
-        "The team delivered a fantastic website for our business. Their attention to detail and dedication is unmatched.",
-      position: "CEO of Acme Corp",
-      guy_name: "John Doe",
-    },
-    {
-      icon: "/images/jane_smith.jpg",
-      content:
-        "Our mobile app's user experience improved drastically thanks to their expertise. Highly recommend!",
-      position: "Product Manager at Tech Solutions",
-      guy_name: "Jane Smith",
-    },
-  ];
-
   return (
-    <div className="services-container">
-      <div className={`services-inner ${isLoading ? "hidden" : ""}`}>
+    <div className={`services-container  ${isLoading ? "hidden" : ""}`}>
+      <div className={`services-inner`}>
         <h1>Our Services</h1>
 
         <div className="service-cards">
-          <div className="service-card">
-            <h2>Web Development</h2>
-            <p>
-              We provide high-quality web development services. We build
-              responsive, fast, and secure websites tailored to your needs.
-            </p>
-          </div>
 
-          <div className="service-card">
-            <h2>Mobile App Development</h2>
-            <p>
-              We build mobile apps for both Android and iOS platforms. We ensure
-              the best performance and user experience for your mobile
-              solutions.
-            </p>
-          </div>
-
-          <div className="service-card">
-            <h2>UI/UX Design</h2>
-            <p>
-              We design user-friendly and intuitive interfaces for web and
-              mobile applications, focusing on usability and simplicity.
-            </p>
-          </div>
-
-          <div className="service-card">
-            <h2>SEO Optimization</h2>
-            <p>
-              Improve your website's visibility on search engines with our SEO
-              optimization services. We help you rank higher and reach more
-              customers.
-            </p>
-          </div>
-
-          <div className="service-card">
-            <h2>Cloud Services</h2>
-            <p>
-              Leverage the power of cloud computing with our cloud services. We
-              offer scalable and secure cloud solutions tailored to your
-              business.
-            </p>
-          </div>
-        </div>
-        <h2>Testimonials</h2>
-        <div className="testimonials">
-          {people.map((person) => {
-            return (
-              <div className="testinomial">
-                <ul>
-                  <div className="testimonial-image">
-                    <li>
-                      <img src={person.icon} alt="" className="left" />
-                    </li>
-                  </div>
-                  <div className="testimonial-card">
-                    <li id="person-name">{person.guy_name}</li>
-                    <li id="person-position">{person.position}</li>
-                  </div>
-                  <li>{person.content}</li>
-                </ul>
+            <div className="service-card-a">
+              <div className="service-card-1"></div>
+              <div className="service-card-2">
+              <h2>Live Traffic Monitoring</h2>
+                <p>
+                  We provide Continuous updates on traffic conditions, suggesting alternative routes to avoid congestion.Automatically adjusts your route based on current traffic, road closures, or accidents.
+                </p>
+                <button>LEARN MORE</button>
               </div>
-            );
-          })}
+            </div> 
+
+            <div className="service-card-b">
+              <div className="service-card-1"></div>
+              <div className="service-card-2">
+              <h2>Affordable Ride Services</h2>
+                <p>
+                  Access low-cost ride options, including local taxis, community drivers, and shuttle services.
+                </p>
+                <button>LEARN MORE</button>
+              </div>
+            </div> 
+
+            <div className="service-card-c">
+              <div className="service-card-1"></div>
+              <div className="service-card-2">
+              <h2>Safety and Assistance Services</h2>
+                <p>
+                  Quick access to emergency services, with features like location sharing. Locate the nearest hospitals, clinics, and police stations with contact information. 
+                </p>
+                <button>LEARN MORE</button>
+              </div>
+            </div> 
+
         </div>
 
-        <div className="contact-section">
-          <h2>Contact Us</h2>
-          <p>
-            If you have any questions or would like to start a project with us,
-            feel free to contact us:
-          </p>
-          <p>Email: info@ourservices.com</p>
-          <p>Phone: (123) 456-7890</p>
-        </div>
       </div>
     </div>
   );
