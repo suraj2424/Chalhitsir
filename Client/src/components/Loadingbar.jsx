@@ -1,9 +1,9 @@
 import React from 'react';
 import './LoadingBar.css';
 
-const LoadingBar = () => {
+const LoadingBar = ({className}) => {
   return (
-    <div className="loading-bar">
+    <div className={`loading-bar ${className}`}>
       <div className="bar"></div>
     </div>
   );

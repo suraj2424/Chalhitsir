@@ -8,6 +8,10 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
+import Feedback from './components/Feedback';
+import Maps from './components/Maps';
+
+
 import ContactUs from './components/ContactUs';
 import NoPage from './components/NoPage';
 import MapSample from './components/MapSample';
@@ -30,7 +34,6 @@ function ScrollToTop() {
 function App() {
   return (
     <Router>
-      <ScrollToTop />
       <div className="App">
       <Navbar/>
       <div className="component-linking">
@@ -45,6 +48,8 @@ function App() {
                 <Route path = "/mapsample" element = {<MapSample/>} />
                 <Route path = "/mapcomponent" element = {<MapComponent/>} />
                 <Route path = "*" element = {<NoPage/>} />
+                <Route path = "/feedback" element = {<Feedback/>} />
+                <Route path = "/maps" element = {<Maps/>} />
             </Routes>
         </div>
         <Footer/>

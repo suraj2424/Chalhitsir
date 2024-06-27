@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import LoadingBar from "./Loadingbar"
 
 const AboutUs = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -14,7 +13,6 @@ const AboutUs = () => {
 
   return (
     <div className="about-us-container">
-      <LoadingBar />
       <div className={`about-us-inner ${isLoading ? 'hidden' : ''}`}>
         <h1>About Us</h1>
 

@@ -3,12 +3,12 @@
   padding: 0;
   width: 100%;
   height: 4px;
-  background-color: #192b31;
   overflow: hidden;
 }
 
 .bar {
   height: 100%;
+  opacity: 0;
   width: 0%;
   background-color: #3498db;
   animation: loading 1s forwards;
