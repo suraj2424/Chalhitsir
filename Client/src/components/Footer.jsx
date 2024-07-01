@@ -105,6 +105,11 @@ export default function Footer() {
                 Contact Us
                 </Link>
               </p>
+              <p>
+                <Link to='/career' className='section-link'>
+                Career
+                </Link>
+              </p>
             </div>
             <div className="section2-col3">
               <h4>CONTACT</h4>

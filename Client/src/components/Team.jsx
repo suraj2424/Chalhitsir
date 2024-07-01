@@ -5,17 +5,29 @@ const Team = () => {
 
   const people = [
     {
-      icon: "/images/john_doe.jpg",
+      icon: "/images/image-person-1.jpg",
       content:"John is the visionary behind our company, leading with passion and dedication.",
       position:"CEO of Acme Corp",
       guy_name: "John Doe"
     },
     {
-      icon: "/images/jane_smith.jpg",
+      icon: "/images/image-person-1.jpg",
       content:"Our mobile app's user experience improved drastically thanks to their expertise. Highly recommend!",
       position:"Product Manager at Tech Solutions",
       guy_name: "Jane Smith"
     },
+    {
+      icon: "/images/image-person-1.jpg",
+      content:"Our mobile app's user experience improved drastically thanks to their expertise. Highly recommend!",
+      position:"Product Manager at Tech Solutions",
+      guy_name: "Jane Smith"
+    },
+    {
+      icon: "/images/image-person-1.jpg",
+      content:"Our mobile app's user experience improved drastically thanks to their expertise. Highly recommend!",
+      position:"Product Manager at Tech Solutions",
+      guy_name: "Jane Smith"
+    }
   ]
 
   useEffect(() => {

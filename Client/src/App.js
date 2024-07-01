@@ -8,7 +8,6 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
-import Feedback from './components/Feedback';
 import Maps from './components/Maps';
 
 
@@ -20,6 +19,7 @@ import MapComponent from './components/MapComponent';
 
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import Career from './components/Career';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -47,9 +47,9 @@ function App() {
                 <Route path = "/contactus" element = {<ContactUs/>} />
                 <Route path = "/mapsample" element = {<MapSample/>} />
                 <Route path = "/mapcomponent" element = {<MapComponent/>} />
-                <Route path = "*" element = {<NoPage/>} />
-                <Route path = "/feedback" element = {<Feedback/>} />
+                <Route path = "/*" element = {<NoPage/>} />
                 <Route path = "/maps" element = {<Maps/>} />
+                <Route path = "/career" element = {<Career/>}/>
             </Routes>
         </div>
         <Footer/>

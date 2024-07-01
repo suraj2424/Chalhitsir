@@ -5,12 +5,7 @@ const cors = require("cors");
 const contactusRouter = require("./routes/conactus");
 const https = require("https");
 const dotenv = require("dotenv").config();
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
 require('dotenv').config();
-
-const contactusRouter = require('./routes/conactus');
 
 const server = express();
 
@@ -25,7 +20,6 @@ server.use(cors(corsOptions));
 server.use(express.json());
 server.use("/contactus", contactusRouter);
 server.use("/user", userRoutes);
-server.use('/contactus',contactusRouter.router);
 
 server.get('/',(req,res)=>{
   res.status(201).json({message:'Connected to ChalHitSir Backend!'});
@@ -38,9 +32,6 @@ async function main() {
   await mongoose.connect(
     "mongodb+srv://DemoUser:demouser123@cluster0.03e2hgr.mongodb.net/chalhitsir"
   );
-  // await mongoose.connect('mongodb://127.0.0.1:27017/');
-  await mongoose.connect(process.env.MONGODB_URL);
-
   console.log("connected to MongoDB");
 }
 
@@ -92,6 +83,3 @@ function generateAuthToken() {
 
 // Call the function to generate the token
 generateAuthToken();
-server.listen(process.env.PORT,()=>{
-    console.log('Server is running on port 3001');
-})
