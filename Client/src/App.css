@@ -117,8 +117,9 @@ body {
   position: relative;
   text-decoration: none;
   /* color: #b8c8e1; */
-  color: #fff;
-  font-weight: 700;
+  color: #000000;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: medium;
   background: transparent;
   border: none;
@@ -130,7 +131,7 @@ body {
 .link-about:hover,
 .link-team:hover,
 .link-login:hover {
-  color: #8dc0ea;
+  color: #381355;
   cursor: pointer;
   transition: color 0.4s ease-in-out;
 }
@@ -1319,8 +1320,8 @@ input[type="number"] {
   z-index: 999;
   color: white;
   top: 310px;
-  padding: 10px 0;
-  background: #1c1c1cab;
+  padding: 0;
+  background: #000000d6;
   width: 525px;
   border-radius: 10px;
   margin-top: 5px;
@@ -1370,7 +1371,7 @@ input[type="number"] {
 }
 
 .loc-start-sugg:hover {
-  background-color: #3a3a3a;
+  background-color: #454545;
   color: #ffffff;
   cursor: pointer;
 }
@@ -1380,8 +1381,8 @@ input[type="number"] {
   z-index: 999;
   color: white;
   top: 310px;
-  padding: 10px 0;
-  background: #1c1c1cab;
+  padding: 0;
+  background: #000000d6;
   width: 525px;
   border-radius: 10px;
   margin-top: 5px;
@@ -1397,7 +1398,7 @@ input[type="number"] {
 }
 
 .loc-end-sugg:hover {
-  background-color: #3a3a3a;
+  background-color: #454545;
   color: #ffffff;
   cursor: pointer;
 }
