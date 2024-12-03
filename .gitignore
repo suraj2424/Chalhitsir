@@ -3,6 +3,7 @@
 ./Server/.env.local
 ./Server/node_modules
 ./Client/node_modules
+Server/.env
 # dependencies
 node_modules
 /.pnp
