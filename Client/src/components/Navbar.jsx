@@ -1,21 +1,27 @@
-import React, {useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import LoadingBar from "./Loadingbar";
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import { MdMenu } from "react-icons/md";
+import { ServiceContext } from "../contexts/ServiceContextProvider";
 
 const Navbar = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isOpen,setIsOpen] = useState(false);
 
 
-  useState(()=>{
+  useEffect(()=>{
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1000);
     return () => clearTimeout(timer);
-  })
+  },[isLoading])
 
+  const { serviceRef } = useContext(ServiceContext);
+
+  const pressService = () => {
+    serviceRef.current.scrollIntoView({ behavior: "smooth" });
+  }
 
   return (
     <><LoadingBar className={`${isLoading ? "" : "hidden"}`}/>
@@ -30,8 +36,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="company-options">
-          <Link to="/mapsample" className="link-team">Routes</Link>
-          <Link to="/services" className="link-services">Services</Link>
+          <button className="link-services" onClick={pressService}>Services</button>
           <Link to="/about-us" className="link-about">About Us</Link>
           <Link to="/team" className="link-team">Team</Link>
           <Link to="/login" className="link-login">Login</Link>
@@ -39,7 +44,7 @@ const Navbar = () => {
       </div>
       <MdMenu  className="menu-small" onClick={()=>setIsOpen(!isOpen)}/> 
       { isOpen ? <div className={`company-options-small`}>
-          <Link to="/services" className="link-services">Services</Link>
+          <button className="link-services">Services</button>
           <Link to="/about-us" className="link-about">About Us</Link>
           <Link to="/team" className="link-team">Team</Link>
           <Link to="/login" className="link-login">Login</Link>

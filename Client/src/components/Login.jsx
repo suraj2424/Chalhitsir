@@ -1,408 +1,64 @@
-// import React, { useState,useEffect } from 'react'
-// import { useNavigate } from 'react-router-dom'
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-
-// const Login = () => {
-
-//   const [isLoading, setIsLoading] = useState(true);
-
-//   useEffect(() => {
-//     const timer = setTimeout(() => {
-//       setIsLoading(false);
-//     }, 1000);
-
-//     return () => clearTimeout(timer);
-//   }, []);
-
-//   let navigate = useNavigate();
-
-//   const [user, setUser] = useState({
-//     email: '',
-//     password: ''
-//   })
-
-//   const [errorMessage, setErrorMessage] = useState('')
-
-
-//   const handleChange = (e) => {
-//     setUser({
-//       ...user,
-//       [e.target.name]: e.target.value
-//     })
-//   }
-
-
-//   const HandleLogin = async (e) => {
-//     e.preventDefault()
-//     if (!user.email || !user.password) {
-//       setErrorMessage('Both email and password fields are required.');
-//       return; // Stop the function from proceeding further
-//     }
-//     try {
-//       const response = await fetch('http://localhost:3001/user/login', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(user)
-//       })
-  
-//       const data = await response.json()
-//       console.log(data)
-  
-//       if (response.ok) {
-//         navigate("/");
-//         toast.success('Login successful!');
-//       }
-//       else{
-//         setErrorMessage('Incorrect email or password')
-//         console.log(errorMessage); // Add this line
-//       }
-//     } catch (error) {
-//       setErrorMessage('Failed to fetch')
-//       console.error('Failed to fetch:', error)
-//     }
-//   }
-
-//   useEffect(() => {
-//     console.log(errorMessage);
-//   }, [errorMessage]);
-
-//   return (
-//     <>
-//     <div className={`login-container ${isLoading ? "hidden" : ""}`}>
-//       <div className='login-inner-1'>
-//       </div>
-//       <div className='login-inner-2'>
-//         <h1>Login</h1>
-//         <form onSubmit={HandleLogin}>
-//           <p>Email</p>
-//           <input type="email" name="email" placeholder="Enter your email" onChange={handleChange} />
-//           <p>Password</p>
-//           <input type="password" name="password" placeholder="Enter your password" onChange={handleChange} />
-//           {errorMessage && <div className='login-error-check'>{errorMessage}</div>}
-//           <button type="submit">Login</button>
-//           <ToastContainer/>
-//         </form>
-//       </div>
-//     </div>
-//     </>
-//   )
-// }
-
-// export default Login
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState, useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-
-// const Login = () => {
-//   const [isLoading, setIsLoading] = useState(true);
-//   const [user, setUser] = useState({
-//     email: '',
-//     password: ''
-//   });
-//   let navigate = useNavigate();
-
-//   useEffect(() => {
-//     const timer = setTimeout(() => {
-//       setIsLoading(false);
-//     }, 1000);
-
-//     return () => clearTimeout(timer);
-//   }, []);
-
-//   const handleChange = (e) => {
-//     setUser({
-//       ...user,
-//       [e.target.name]: e.target.value
-//     });
-//   };
-
-//   const HandleLogin = async (e) => {
-//     e.preventDefault();
-
-//     if (!user.email || !user.password) {
-//       toast.error('Both email and password fields are required.');
-//       return;
-//     }
-
-//     try {
-//       const response = await fetch('http://localhost:3001/user/login', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(user)
-//       });
-
-//       const data = await response.json();
-
-//       if (response.ok) {
-//         toast.success('Login successful!');
-//         navigate("/");
-//       } else {
-//         toast.error('Incorrect email or password');
-//       }
-//     } catch (error) {
-//       toast.error('Failed to fetch');
-//       console.error('Failed to fetch:', error);
-//     }
-//   };
-
-//   return (
-//     <>
-//       <div className={`login-container ${isLoading ? "hidden" : ""}`}>
-//         <div className='login-inner-1'></div>
-//         <div className='login-inner-2'>
-//           <h1>Login</h1>
-//           <form onSubmit={HandleLogin}>
-//             <p>Email</p>
-//             <input type="email" name="email" placeholder="Enter your email" onChange={handleChange} />
-//             <p>Password</p>
-//             <input type="password" name="password" placeholder="Enter your password" onChange={handleChange} />
-//             <button type="submit">Login</button>
-//           </form>
-//         </div>
-//       </div>
-//       <ToastContainer />
-//     </>
-//   );
-// };
-
-// export default Login;
-
-
-
-
-
-
-// ALMOST SUCCESSFUL ALL WORKING BUT BECAUSE OF BROWSER PROMPT NOT WORKING
-
-// import React, { useState, useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-
-// const Login = () => {
-//   const [isLoading, setIsLoading] = useState(true);
-//   const [user, setUser] = useState({
-//     email: '',
-//     password: ''
-//   });
-//   let navigate = useNavigate();
-
-//   useEffect(() => {
-//     const timer = setTimeout(() => {
-//       setIsLoading(false);
-//     }, 1000);
-//     return () => clearTimeout(timer);
-//   }, []);
-
-//   const handleChange = (e) => {
-//     setUser({
-//       ...user,
-//       [e.target.name]: e.target.value
-//     });
-//   };
-
-//   const HandleLogin = async (e) => {
-//     e.preventDefault();
-
-//     if (!user.email || !user.password) {
-//       toast.error('Both email and password fields are required.');
-//       return;
-//     }
-
-//     try {
-//       const response = await fetch('http://localhost:3001/user/login', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(user)
-//       });
-
-//       const data = await response.json();
-//       console.log("Response Data:", data); // Debug log
-
-//       if (response.ok) {
-//         toast.success('Login successful!');
-//         navigate("/");
-//       } else {
-//         toast.error(data.message || 'Incorrect email or password');
-//       }
-//     } catch (error) {
-//       toast.error('Failed to fetch');
-//       console.error('Failed to fetch:', error);
-//     }
-//   };
-
-//   return (
-//     <>
-//       <div className={`login-container ${isLoading ? "hidden" : ""}`}>
-//         <div className='login-inner-1'></div>
-//         <div className='login-inner-2'>
-//           <h1>Login</h1>
-//           <form onSubmit={HandleLogin}>
-//             <p>Email</p>
-//             <input type="email" name="email" placeholder="Enter your email" onChange={handleChange} />
-//             <p>Password</p>
-//             <input type="password" name="password" placeholder="Enter your password" onChange={handleChange} />
-//             <button type="submit">Login</button>
-//           </form>
-//         </div>
-//       </div>
-//       <ToastContainer />
-//     </>
-//   );
-// };
-
-// export default Login;
-
-
-
-
-
-
-
-
-// Toast Successful but issue some browser causing it to hide immediately
-
-// import React, { useState, useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-
-// const Login = () => {
-//   const [isLoading, setIsLoading] = useState(true);
-//   const [user, setUser] = useState({ email: '', password: '' });
-//   const [loginSuccess, setLoginSuccess] = useState(false); // Added success flag
-//   let navigate = useNavigate();
-
-//   useEffect(() => {
-//     const timer = setTimeout(() => {
-//       setIsLoading(false);
-//     }, 1000);
-
-//     return () => clearTimeout(timer);
-//   }, []);
-
-//   const handleChange = (e) => {
-//     setUser({
-//       ...user,
-//       [e.target.name]: e.target.value
-//     });
-//   };
-
-//   const HandleLogin = async (e) => {
-//     e.preventDefault();
-
-//     if (!user.email || !user.password) {
-//       toast.error('Both email and password fields are required.');
-//       return;
-//     }
-
-//     try {
-//       const response = await fetch('http://localhost:3001/user/login', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(user)
-//       });
-
-//       if (response.ok) {
-//         toast.success('Login successful!');
-//         setLoginSuccess(true); // Set success flag
-//       } else {
-//         const data = await response.json();
-//         toast.error(data.message || 'Incorrect email or password');
-//       }
-//     } catch (error) {
-//       toast.error('Failed to fetch');
-//       console.error('Failed to fetch:', error);
-//     }
-//   };
-
-//   useEffect(() => {
-//     if (loginSuccess) {
-//       // Delay navigation to allow toast to show
-//       const timer = setTimeout(() => {
-//         navigate("/");
-//       }, 500); // 0.5 seconds delay
-
-//       return () => clearTimeout(timer); // Cleanup the timer
-//     }
-//   }, [loginSuccess, navigate]);
-
-//   return (
-//     <>
-//       <div className={`login-container ${isLoading ? "hidden" : ""}`}>
-//         <div className='login-inner-1'></div>
-//         <div className='login-inner-2'>
-//           <h1>Login</h1>
-//           <form onSubmit={HandleLogin}>
-//             <p>Email</p>
-//             <input type="email" name="email" placeholder="Enter your email" onChange={handleChange} />
-//             <p>Password</p>
-//             <input type="password" name="password" placeholder="Enter your password" onChange={handleChange} />
-//             <button type="submit">Login</button>
-//           </form>
-//         </div>
-//       </div>
-//       <ToastContainer />
-//     </>
-//   );
-// };
-
-// export default Login;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { IoIosArrowRoundBack } from "react-icons/io";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+const InputField = ({ type, name, placeholder, value, handleChange, error }) => (
+  <>
+    <input
+      type={type}
+      name={name}
+      placeholder={placeholder}
+      value={value}
+      onChange={handleChange}
+      required
+    />
+    {error && <div className="login-post-error-check">{error}</div>}
+  </>
+);
+
+const LoginForm = ({ user, handleChange, handleLogin, errors, submitAttempted, isSubmitting }) => (
+  <form onSubmit={handleLogin}>
+    <label htmlFor="email">Email</label>
+    <InputField
+      type="text"
+      name="email"
+      placeholder="Email"
+      value={user.email}
+      handleChange={handleChange}
+      error={submitAttempted && errors.email}
+    />
+    <label htmlFor="password">Password</label>
+    <InputField
+      type="password"
+      name="password"
+      placeholder="Password"
+      value={user.password}
+      handleChange={handleChange}
+      error={submitAttempted && errors.password}
+    />
+    <p>Don't have an Account? <Link to="/signup">Sign Up</Link></p>
+    <button type="submit" disabled={isSubmitting}>
+      {isSubmitting ? 'Logging in...' : 'Login'}
+    </button>
+  </form>
+);
+
 const Login = () => {
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
-  const [user, setUser] = useState({ email: '', password: '' });
-  const [loginSuccess, setLoginSuccess] = useState(false);
-  let navigate = useNavigate();
+  const [errors, setErrors] = useState({});
+  const [submitAttempted, setSubmitAttempted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
 
   useEffect(() => {
+    document.title = "Login - Chalhitsir";
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1000);
@@ -410,69 +66,93 @@ const Login = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleChange = (e) => {
-    setUser({
-      ...user,
-      [e.target.name]: e.target.value
-    });
+  const validateField = (name, value) => {
+    let error = "";
+    if (!value) {
+      error = `${name.charAt(0).toUpperCase() + name.slice(1)} is required`;
+    } else if (name === "email" && !/\S+@\S+\.\S+/.test(value)) {
+      error = "Email is invalid";
+    }
+    return error;
   };
 
-  const HandleLogin = async (e) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
+    const error = validateField(name, value);
+    setErrors({ ...errors, [name]: error });
+  };
+
+  const handleLogin = async (e) => {
     e.preventDefault();
+    const formErrors = Object.keys(user).reduce((acc, key) => {
+      const error = validateField(key, user[key]);
+      if (error) acc[key] = error;
+      return acc;
+    }, {});
 
-    if (!user.email || !user.password) {
-      toast.error('Both email and password fields are required.');
-      return;
-    }
+    setErrors(formErrors);
+    setSubmitAttempted(true);
 
+    if (Object.values(formErrors).some((error) => error)) return;
+
+    setIsSubmitting(true);
     try {
-      const response = await fetch('http://localhost:3001/user/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(user)
+      const response = await fetch("/user/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user),
       });
 
+      const data = await response.json();
       if (response.ok) {
-        toast.success('Login successful!', { autoClose: 3000 }); // Extended autoClose
-        setLoginSuccess(true);
+        toast.success('Login successful!');
+        // Navigate after a short delay
+        setTimeout(() => navigate("/"), 1500);
       } else {
-        const data = await response.json();
-        toast.error(data.message || 'Incorrect email or password');
+        toast.error(data.message || 'Login failed.');
       }
     } catch (error) {
-      toast.error('Failed to fetch');
-      console.error('Failed to fetch:', error);
+      console.error("Failed to fetch:", error);
+      setErrors({ submit: "Network error: Unable to reach the server." });
+    } finally {
+      setIsSubmitting(false);
     }
   };
-
-  useEffect(() => {
-    if (loginSuccess) {
-      const timer = setTimeout(() => {
-        navigate("/", { state: { fromLogin: true } });
-      }, 2000); // 2 seconds delay
-
-      return () => clearTimeout(timer);
-    }
-  }, [loginSuccess, navigate]);
 
   return (
     <>
       <div className={`login-container ${isLoading ? "hidden" : ""}`}>
-        <div className='login-inner-1'></div>
-        <div className='login-inner-2'>
-          <h1>Login</h1>
-          <form onSubmit={HandleLogin}>
-            <p>Email</p>
-            <input type="email" name="email" placeholder="Enter your email" onChange={handleChange} />
-            <p>Password</p>
-            <input type="password" name="password" placeholder="Enter your password" onChange={handleChange} />
-            <button type="submit">Login</button>
-          </form>
+        <div className="login-inner-1"></div>
+        <div className="login-inner-2">
+          <div className="login-inner-2-centered">
+            <div className="login-inner-left">
+              <div className="login-company-logo">
+                <Link to="/" className="login-logo-effect">
+                  <img src="/images/image.png" alt="Logo" />
+                  <span>C</span>HALHITSIR
+                </Link>
+              </div>
+            </div>
+            <div className="login-inner-right">
+              <div className="home">
+                <Link to="/"><IoIosArrowRoundBack className="back-arrow"/>Go back to Homepage</Link>
+              </div>
+              <h1>Login</h1>
+              {errors.submit && <div className="login-post-error-check">{errors.submit}</div>}
+              <LoginForm
+                user={user}
+                handleChange={handleChange}
+                handleLogin={handleLogin}
+                errors={errors}
+                submitAttempted={submitAttempted}
+                isSubmitting={isSubmitting}
+              />
+              <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
+            </div>
+          </div>
         </div>
       </div>
-      <ToastContainer />
     </>
   );
 };

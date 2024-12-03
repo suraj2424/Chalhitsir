@@ -5,7 +5,6 @@ const cors = require("cors");
 const contactusRouter = require("./routes/conactus");
 const https = require("https");
 const dotenv = require("dotenv").config();
-require('dotenv').config();
 
 const server = express();
 
@@ -21,10 +20,6 @@ server.use(express.json());
 server.use("/contactus", contactusRouter);
 server.use("/user", userRoutes);
 
-server.get('/',(req,res)=>{
-  res.status(201).json({message:'Connected to ChalHitSir Backend!'});
-});
-
 main().catch((err) => console.log(err));
 
 async function main() {
@@ -32,12 +27,16 @@ async function main() {
   await mongoose.connect(
     "mongodb+srv://DemoUser:demouser123@cluster0.03e2hgr.mongodb.net/chalhitsir"
   );
+
   console.log("connected to MongoDB");
 }
 
 server.listen(3001, () => {
   console.log("Server is running on port 3001");
 });
+
+
+let authToken = null;
 
 function generateAuthToken() {
   const options = {
@@ -67,9 +66,8 @@ function generateAuthToken() {
 
     res.on("end", () => {
       const parsedData = JSON.parse(responseData);
-      const token = parsedData.access_token;
-      // Handle the token (e.g., store it or use it for subsequent requests)
-      console.log(token);
+      authToken = parsedData.access_token;
+      console.log("Token generated:", authToken);
     });
   });
 
@@ -80,6 +78,15 @@ function generateAuthToken() {
   req.write(data.toString());
   req.end();
 }
+
+// Endpoint to get the token
+server.get("/token", (req, res) => {
+  if (authToken) {
+    res.json({ access_token: authToken });
+  } else {
+    res.status(503).json({ error: "Token not available yet. Please try again later." });
+  }
+});
 
 // Call the function to generate the token
 generateAuthToken();
