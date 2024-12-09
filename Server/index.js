@@ -9,7 +9,7 @@ const dotenv = require("dotenv").config();
 const server = express();
 
 corsOptions = {
-  origin: "http://localhost:3000",
+  origin: ["http://localhost:3000","https://chalhitsir.onrender.com/"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 };

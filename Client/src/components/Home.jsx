@@ -11,6 +11,7 @@ const Home = () => {
     return () => clearTimeout(timer);
   });
 
+
   const incidents = [
     {
       incident:"Avalanche near Rocky Peak",
@@ -45,7 +46,10 @@ const Home = () => {
               Discover tranquil travel experiences with real-time route
               tracking, affordable rides, and essential travel tools.
             </p>
-            <button>Get Started</button>
+            <button onClick={()=> {
+              // Redirect to the login page
+              window.location.href = "/login";
+            }}>Get Started</button>
         </div>
         <div className="filter"></div>
       </div>
